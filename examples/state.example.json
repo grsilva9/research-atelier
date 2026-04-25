@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 3,
+  "papers": [
+    {
+      "id": "p_example_1",
+      "title": "Contrastive Learning under Distribution Shift",
+      "shortName": "ContraShift",
+      "venue": "NeurIPS",
+      "deadline": "2026-05-22",
+      "stageStatus": {
+        "ideation": { "manualDone": true },
+        "literature": { "manualDone": false },
+        "drafting": { "manualDone": false },
+        "code": { "manualDone": false },
+        "experiments": { "manualDone": false },
+        "aesthetics": { "manualDone": false }
+      },
+      "ideationNotes": {
+        "title": { "maturity": 3, "notes": "Working title: Contrastive Learning under Distribution Shift. Could also be 'Density-Reweighted InfoNCE.'" },
+        "gap": { "maturity": 4, "notes": "Existing contrastive methods assume iid data; we look at the shift case. The gap is real and underexplored." },
+        "hypothesis": { "maturity": 3, "notes": "H1: the InfoNCE bound tightens under a reweighted sampling scheme. H2: reweighting improves downstream transfer under covariate shift." },
+        "method": { "maturity": 3, "notes": "Reweighted InfoNCE with density ratio estimation. Use a small auxiliary classifier trained on source/target samples." },
+        "experimentDesign": { "maturity": 2, "notes": "CIFAR-10-C, ImageNet-C, plus synthetic shift. Need at least 3 seeds." },
+        "outlook": { "maturity": 1, "notes": "" },
+        "conclusion": { "maturity": 1, "notes": "" }
+      },
+      "createdAt": "2026-02-10T09:00:00.000Z",
+      "updatedAt": "2026-04-22T16:00:00.000Z",
+      "links": [
+        { "label": "Overleaf", "url": "https://www.overleaf.com/project/example1" }
+      ],
+      "collaborators": "Alice, Bob",
+      "paused": false,
+      "archived": false
+    },
+    {
+      "id": "p_example_2",
+      "title": "On the Role of Implicit Regularization in Deep Nets",
+      "shortName": "ImplicitReg",
+      "venue": "JMLR",
+      "stageStatus": {
+        "ideation": { "manualDone": false },
+        "literature": { "manualDone": false },
+        "drafting": { "manualDone": false },
+        "code": { "manualDone": false },
+        "experiments": { "manualDone": false },
+        "aesthetics": { "manualDone": false }
+      },
+      "ideationNotes": {
+        "title": { "maturity": 2, "notes": "Working title." },
+        "gap": { "maturity": 3, "notes": "Most work treats implicit reg as a single phenomenon; we argue it's at least three distinct effects." },
+        "hypothesis": { "maturity": 2, "notes": "" },
+        "method": { "maturity": 1, "notes": "" },
+        "experimentDesign": { "maturity": 0, "notes": "" },
+        "outlook": { "maturity": 0, "notes": "" },
+        "conclusion": { "maturity": 0, "notes": "" }
+      },
+      "createdAt": "2026-04-01T10:00:00.000Z",
+      "updatedAt": "2026-04-18T11:00:00.000Z",
+      "links": [],
+      "collaborators": "",
+      "paused": false,
+      "archived": false
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t_ex_1",
+      "paperId": "p_example_1",
+      "stage": "drafting",
+      "title": "Draft the gap paragraph for ContraShift intro",
+      "status": "in_progress",
+      "source": "manual",
+      "createdAt": "2026-04-18T09:15:00.000Z",
+      "criteria": {
+        "impact": 0.6,
+        "probability": 0.9,
+        "infoGain": 0,
+        "timeSensitivity": 1.0,
+        "effort": 1
+      }
+    },
+    {
+      "id": "t_ex_2",
+      "paperId": "p_example_1",
+      "stage": "literature",
+      "title": "Find the Saunshi 2022 paper on InfoNCE bounds",
+      "status": "todo",
+      "source": "manual",
+      "createdAt": "2026-04-19T12:00:00.000Z",
+      "criteria": {
+        "impact": 0.6,
+        "probability": 0.9,
+        "infoGain": 0.5,
+        "timeSensitivity": 0.6,
+        "effort": 1
+      }
+    },
+    {
+      "id": "t_ex_3",
+      "paperId": "p_example_1",
+      "stage": "experiments",
+      "title": "Run ContraShift on CIFAR-10-C, 3 seeds",
+      "status": "in_progress",
+      "source": "manual",
+      "createdAt": "2026-04-15T08:00:00.000Z",
+      "criteria": {
+        "impact": 1.0,
+        "probability": 0.7,
+        "infoGain": 1.0,
+        "timeSensitivity": 1.0,
+        "effort": 3
+      }
+    },
+    {
+      "id": "t_ex_4",
+      "paperId": "p_example_1",
+      "stage": "experiments",
+      "title": "Run ContraShift on ImageNet-C, 3 seeds",
+      "status": "todo",
+      "source": "manual",
+      "createdAt": "2026-04-20T14:00:00.000Z",
+      "criteria": {
+        "impact": 1.0,
+        "probability": 0.7,
+        "infoGain": 0.5,
+        "timeSensitivity": 1.0,
+        "effort": 3
+      }
+    },
+    {
+      "id": "t_ex_5",
+      "paperId": "p_example_1",
+      "stage": "code",
+      "title": "Implement density-ratio estimator module",
+      "status": "done",
+      "source": "manual",
+      "createdAt": "2026-04-10T09:00:00.000Z",
+      "completedAt": "2026-04-14T17:00:00.000Z",
+      "criteria": {
+        "impact": 0.6,
+        "probability": 0.7,
+        "infoGain": 0.5,
+        "timeSensitivity": 0.6,
+        "effort": 2
+      }
+    },
+    {
+      "id": "t_ex_6",
+      "paperId": "p_example_2",
+      "stage": "ideation",
+      "title": "Taxonomize the three effects clearly",
+      "status": "todo",
+      "source": "manual",
+      "createdAt": "2026-04-17T10:00:00.000Z",
+      "criteria": {
+        "impact": 1.0,
+        "probability": 0.9,
+        "infoGain": 1.0,
+        "timeSensitivity": 0.3,
+        "effort": 1
+      }
+    },
+    {
+      "id": "t_ex_7",
+      "paperId": "p_example_2",
+      "stage": "literature",
+      "title": "Collect 10 key references on implicit regularization",
+      "status": "todo",
+      "source": "manual",
+      "createdAt": "2026-04-18T13:00:00.000Z",
+      "criteria": {
+        "impact": 0.6,
+        "probability": 0.9,
+        "infoGain": 0.5,
+        "timeSensitivity": 0.3,
+        "effort": 2
+      }
+    }
+  ],
+  "diary": [
+    {
+      "id": "d_ex_1",
+      "paperId": "p_example_1",
+      "kind": "log",
+      "content": "Finalized the density-ratio estimation approach. Next up: fold it into Section 3 of the Overleaf.",
+      "createdAt": "2026-04-22T16:00:00.000Z"
+    }
+  ],
+  "settings": {
+    "wipLimit": 3,
+    "staleDays": 14
+  },
+  "lastSavedAt": "2026-04-22T16:00:00.000Z"
+}

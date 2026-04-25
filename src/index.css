@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global refinements that Tailwind alone doesn't cleanly express. */
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    font-feature-settings: 'ss01', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Subtle paper-grain texture layered on the background. Adds warmth
+     without being loud. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(26, 26, 26, 0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    z-index: 0;
+  }
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Serif headings get a tiny bit more weight than Fraunces default. */
+  h1, h2, h3 {
+    font-feature-settings: 'ss01', 'dlig';
+  }
+
+  /* Scrollbar polish for WebKit. Firefox uses scrollbar-color. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d4cfc2;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b8b2a1;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+
+  /* Subtle focus ring using the accent color. */
+  :focus-visible {
+    outline: 2px solid #c4542c;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-soft transition-shadow;
+  }
+  .card-hover {
+    @apply hover:shadow-medium;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-150;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent/90 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-ink-soft hover:bg-paper-200 hover:text-ink;
+  }
+  .btn-outline {
+    @apply btn border border-paper-300 bg-white text-ink hover:border-paper-400 hover:bg-paper-50;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium;
+  }
+  .input {
+    @apply w-full px-3 py-2 bg-white border border-paper-300 rounded-md text-sm
+           placeholder:text-ink-mute focus:border-accent focus:outline-none
+           focus:ring-2 focus:ring-accent/15 transition-colors;
+  }
+  .textarea {
+    @apply input resize-y min-h-[72px] font-sans;
+  }
+  .section-label {
+    @apply text-[11px] uppercase tracking-[0.08em] font-medium text-ink-mute;
+  }
+}

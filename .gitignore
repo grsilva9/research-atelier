@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local state files — the whole point is that state travels separately from code.
+# If you want to keep a state file in the repo for yourself, remove this line.
+state.json
+*.state.json
+
+# Environment
+.env
+.env.local
